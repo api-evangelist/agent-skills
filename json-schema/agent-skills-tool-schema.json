@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/agent-skills/refs/heads/main/json-schema/agent-skills-tool-schema.json",
+  "title": "Tool",
+  "description": "A skill definition for an AI agent including name, description, and input parameter schema.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of tool (custom or provider built-in).",
+      "example": "function",
+      "enum": ["function", "web_search_20260209", "code_execution_20260209", "web_fetch_20260209", "tool_search_20260209"]
+    },
+    "name": {
+      "type": "string",
+      "description": "Unique name of the tool used to identify the invocation.",
+      "example": "get_weather"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable description of what the tool does, used by the model to decide when to call it.",
+      "example": "Get the current weather for a given location."
+    },
+    "input_schema": {
+      "type": "object",
+      "description": "JSON Schema defining the parameters the tool accepts.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "example": "object"
+        },
+        "properties": {
+          "type": "object",
+          "description": "Map of parameter names to their schema definitions."
+        },
+        "required": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of required parameter names."
+        }
+      }
+    },
+    "strict": {
+      "type": "boolean",
+      "description": "When true, enforces strict JSON Schema compliance for tool call inputs.",
+      "example": false
+    }
+  },
+  "required": ["name", "description", "input_schema"]
+}

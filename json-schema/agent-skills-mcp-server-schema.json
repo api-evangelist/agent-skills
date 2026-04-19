@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/agent-skills/refs/heads/main/json-schema/agent-skills-mcp-server-schema.json",
+  "title": "MCPServer",
+  "description": "A Model Context Protocol server that exposes agent skills (tools, resources, prompts) to AI clients.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the MCP server.",
+      "example": "filesystem-server"
+    },
+    "version": {
+      "type": "string",
+      "description": "Server version.",
+      "example": "1.0.0"
+    },
+    "transport": {
+      "type": "string",
+      "description": "Communication transport used by the server.",
+      "enum": ["http", "stdio", "websocket"],
+      "example": "http"
+    },
+    "tools": {
+      "type": "array",
+      "description": "List of tools exposed by this MCP server.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "inputSchema": { "type": "object" }
+        }
+      }
+    },
+    "resources": {
+      "type": "array",
+      "description": "List of resources (data sources) the server can provide.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uri": { "type": "string", "format": "uri" },
+          "name": { "type": "string" },
+          "mimeType": { "type": "string" }
+        }
+      }
+    },
+    "prompts": {
+      "type": "array",
+      "description": "Reusable prompt templates exposed by the server.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    }
+  },
+  "required": ["name", "transport"]
+}

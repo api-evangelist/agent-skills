@@ -1,0 +1,38 @@
+{
+  "name": "filesystem-server",
+  "version": "1.2.0",
+  "transport": "stdio",
+  "tools": [
+    {
+      "name": "read_file",
+      "description": "Read the contents of a file at the given path.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": { "type": "string", "description": "File path to read" }
+        },
+        "required": ["path"]
+      }
+    },
+    {
+      "name": "write_file",
+      "description": "Write content to a file at the given path.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": { "type": "string", "description": "File path to write" },
+          "content": { "type": "string", "description": "Content to write" }
+        },
+        "required": ["path", "content"]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "file:///home/user/documents",
+      "name": "Documents",
+      "mimeType": "inode/directory"
+    }
+  ],
+  "prompts": []
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/agent-skills/refs/heads/main/json-structure/agent-skills-tool-result-structure.json",
+  "name": "ToolResult",
+  "description": "The output returned to an AI agent after executing a tool skill.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Content block type, always tool_result.",
+      "example": "tool_result"
+    },
+    "tool_use_id": {
+      "type": "string",
+      "description": "The id of the tool_use block this result corresponds to.",
+      "example": "toolu_01A09q90qw90lq917835lq9"
+    },
+    "content": {
+      "description": "The result content returned from the tool. Can be a string or array of content blocks.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ],
+      "example": "72\u00b0F and sunny in San Francisco, CA"
+    },
+    "is_error": {
+      "type": "boolean",
+      "description": "When true, indicates the tool execution returned an error.",
+      "example": false
+    }
+  },
+  "required": [
+    "type",
+    "tool_use_id",
+    "content"
+  ]
+}

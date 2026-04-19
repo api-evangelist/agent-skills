@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/agent-skills/refs/heads/main/json-structure/agent-skills-tool-call-structure.json",
+  "name": "ToolCall",
+  "description": "An AI agent's invocation of a tool skill with specific input parameters.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this tool call instance.",
+      "example": "toolu_01A09q90qw90lq917835lq9"
+    },
+    "type": {
+      "type": "string",
+      "description": "Content block type, always tool_use.",
+      "example": "tool_use"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the tool being called.",
+      "example": "get_weather"
+    },
+    "input": {
+      "type": "object",
+      "description": "Input parameters provided to the tool, conforming to the tool's input_schema.",
+      "example": {
+        "location": "San Francisco, CA"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "name",
+    "input"
+  ]
+}

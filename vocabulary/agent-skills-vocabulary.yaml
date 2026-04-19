@@ -1,0 +1,276 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Agent Skills
+  description: Vocabulary and taxonomy for the AI agent skills topic, covering the landscape of tools, capabilities, protocols, and frameworks that enable AI agents to perform tasks.
+  created: '2026-04-19'
+  modified: '2026-04-19'
+
+operational:
+  apis:
+    - name: Anthropic Tool Use API
+      namespace: anthropic-tool-use
+      version: "2023-06-01"
+      baseUrl: https://api.anthropic.com
+      status: active
+    - name: Google Agent Development Kit
+      namespace: google-adk
+      version: "1.0"
+      baseUrl: https://adk.dev
+      status: active
+    - name: Model Context Protocol
+      namespace: mcp
+      version: "1.0"
+      baseUrl: https://modelcontextprotocol.io
+      status: active
+
+  resources:
+    - name: tools
+      description: Discrete skills or functions an agent can invoke
+      apis:
+        - anthropic-tool-use
+        - google-adk
+        - mcp
+      actions:
+        - define
+        - invoke
+        - discover
+        - register
+    - name: agents
+      description: AI systems that orchestrate tool use and task completion
+      apis:
+        - google-adk
+        - anthropic-tool-use
+      actions:
+        - create
+        - run
+        - orchestrate
+        - compose
+    - name: mcp-servers
+      description: MCP protocol servers exposing skills to AI clients
+      apis:
+        - mcp
+      actions:
+        - build
+        - deploy
+        - connect
+        - list
+    - name: workflows
+      description: Composed sequences of agent skills forming multi-step processes
+      apis:
+        - google-adk
+      actions:
+        - define
+        - execute
+        - monitor
+    - name: sessions
+      description: Stateful context sessions maintaining memory across agent interactions
+      apis:
+        - google-adk
+        - anthropic-tool-use
+      actions:
+        - create
+        - maintain
+        - terminate
+
+  actions:
+    - name: invoke
+      description: Execute an agent skill or tool
+      httpMethod: POST
+      pattern: write
+    - name: define
+      description: Declare a tool schema for agent use
+      httpMethod: POST
+      pattern: write
+    - name: discover
+      description: List available tools at runtime
+      httpMethod: GET
+      pattern: read
+    - name: search
+      description: Search available tools by capability
+      httpMethod: POST
+      pattern: query
+    - name: execute
+      description: Run a workflow or agent task
+      httpMethod: POST
+      pattern: write
+    - name: compose
+      description: Combine multiple skills into a multi-agent workflow
+      httpMethod: POST
+      pattern: write
+
+  schemas:
+    core:
+      - name: Tool
+        description: A skill definition including name, description, and input schema
+        properties:
+          - name: type
+          - name: name
+          - name: description
+          - name: input_schema
+      - name: ToolCall
+        description: An agent's invocation of a tool with specific inputs
+        properties:
+          - name: id
+          - name: type
+          - name: name
+          - name: input
+      - name: ToolResult
+        description: The output returned after executing a tool call
+        properties:
+          - name: tool_use_id
+          - name: type
+          - name: content
+      - name: Agent
+        description: An AI agent instance with associated skills and configuration
+        properties:
+          - name: name
+          - name: model
+          - name: tools
+          - name: instructions
+      - name: MCPServer
+        description: A Model Context Protocol server exposing tools to AI clients
+        properties:
+          - name: name
+          - name: transport
+          - name: tools
+          - name: resources
+
+  parameters:
+    identifiers:
+      - name: tool_use_id
+        description: Unique identifier for a tool invocation
+      - name: session_id
+        description: Identifier for a stateful agent session
+    configuration:
+      - name: model
+        description: The AI model used by the agent
+      - name: max_tokens
+        description: Maximum tokens allowed in an agent response
+      - name: tool_choice
+        description: Controls how the agent selects tools (auto, any, tool, none)
+
+  enums:
+    tool_choice:
+      - auto
+      - any
+      - none
+      - tool
+    transport:
+      - http
+      - stdio
+      - websocket
+    skill_type:
+      - function
+      - mcp
+      - openapi
+      - builtin
+    builtin_skills:
+      - web_search
+      - code_execution
+      - web_fetch
+      - tool_search
+      - file_read
+      - file_write
+      - bash
+      - text_editor
+
+  authentication:
+    schemes:
+      - name: API Key
+        type: apiKey
+        description: Bearer API key passed in x-api-key header
+        apis:
+          - anthropic-tool-use
+
+capability:
+  workflows:
+    - name: Tool Definition and Invocation
+      description: Define agent skills as JSON schemas and invoke them from an AI model response
+      apis:
+        - anthropic-tool-use
+        - google-adk
+      personas:
+        - AI Developer
+      domains:
+        - Tool Use
+    - name: MCP Server Integration
+      description: Connect an AI agent to an MCP server to discover and invoke remote skills
+      apis:
+        - mcp
+        - anthropic-tool-use
+      personas:
+        - AI Developer
+        - Platform Engineer
+      domains:
+        - MCP
+        - Tool Use
+    - name: Multi-Agent Orchestration
+      description: Coordinate multiple specialized agents each with distinct skill sets to complete complex tasks
+      apis:
+        - google-adk
+      personas:
+        - AI Architect
+      domains:
+        - Multi-Agent
+        - Orchestration
+
+  personas:
+    - id: ai-developer
+      name: AI Developer
+      description: Developers building AI-powered applications with tool use and agent capabilities
+      workflows:
+        - Tool Definition and Invocation
+        - MCP Server Integration
+    - id: platform-engineer
+      name: Platform Engineer
+      description: Engineers deploying and managing MCP servers and agent infrastructure
+      workflows:
+        - MCP Server Integration
+    - id: ai-architect
+      name: AI Architect
+      description: Architects designing multi-agent systems with composed skill workflows
+      workflows:
+        - Multi-Agent Orchestration
+
+  domains:
+    - name: Tool Use
+      description: The practice of enabling AI agents to invoke external functions and APIs
+    - name: MCP
+      description: The Model Context Protocol ecosystem for standardized agent-tool connectivity
+    - name: Multi-Agent
+      description: Systems where multiple AI agents collaborate, each contributing specialized skills
+    - name: Orchestration
+      description: Coordination of skill invocation sequences and agent delegation
+
+crossReference:
+  - resource: tools
+    operations:
+      - define
+      - invoke
+      - discover
+    workflows:
+      - Tool Definition and Invocation
+      - MCP Server Integration
+    personas:
+      - AI Developer
+  - resource: mcp-servers
+    operations:
+      - build
+      - deploy
+      - connect
+    workflows:
+      - MCP Server Integration
+    personas:
+      - Platform Engineer
+  - resource: agents
+    operations:
+      - create
+      - run
+      - orchestrate
+    workflows:
+      - Multi-Agent Orchestration
+      - Tool Definition and Invocation
+    personas:
+      - AI Architect
+      - AI Developer

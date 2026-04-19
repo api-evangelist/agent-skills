@@ -1,0 +1,87 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "ask": "https://api-evangelist.github.io/agent-skills/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Tool": "ask:Tool",
+    "ToolCall": "ask:ToolCall",
+    "ToolResult": "ask:ToolResult",
+    "MCPServer": "ask:MCPServer",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+
+    "type": {
+      "@id": "ask:type",
+      "@type": "xsd:string"
+    },
+    "inputSchema": {
+      "@id": "ask:input_schema",
+      "@type": "@id"
+    },
+    "input": {
+      "@id": "ask:input",
+      "@type": "@id"
+    },
+    "strict": {
+      "@id": "ask:strict",
+      "@type": "xsd:boolean"
+    },
+    "id": {
+      "@id": "dcterms:identifier",
+      "@type": "xsd:string"
+    },
+    "toolUseId": {
+      "@id": "ask:tool_use_id",
+      "@type": "xsd:string"
+    },
+    "content": {
+      "@id": "ask:content",
+      "@type": "xsd:string"
+    },
+    "isError": {
+      "@id": "ask:is_error",
+      "@type": "xsd:boolean"
+    },
+    "transport": {
+      "@id": "ask:transport",
+      "@type": "xsd:string"
+    },
+    "tools": {
+      "@id": "ask:tools",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "resources": {
+      "@id": "ask:resources",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "prompts": {
+      "@id": "ask:prompts",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "uri": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "mimeType": {
+      "@id": "ask:mime_type",
+      "@type": "xsd:string"
+    },
+    "required": {
+      "@id": "ask:required",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "properties": {
+      "@id": "ask:properties",
+      "@type": "@id"
+    }
+  }
+}
