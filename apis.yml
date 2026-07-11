@@ -69,6 +69,8 @@ apis:
         url: https://github.com/modelcontextprotocol/specification
 
 common:
+  - type: DomainSecurity
+    url: security/agent-skills-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/api-evangelist
   - type: JSONSchema

@@ -1,0 +1,33 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: platform.claude.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 24 00:48:33 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: api.anthropic.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 24 18:45:51 2026 GMT
+  hsts: null
+- host: adk.dev
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 30 02:51:21 2026 GMT
+  hsts: false
+domains:
+- domain: claude.com
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: true
+  dmarc_policy: reject
+- domain: anthropic.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
