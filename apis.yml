@@ -16,7 +16,7 @@ description: A collection of resources, APIs, and standards related to AI agent 
 url: https://github.com/api-evangelist/agent-skills
 created: '2025-01-01'
 modified: '2026-04-19'
-specificationVersion: '0.18'
+specificationVersion: '0.23'
 tags:
   - Agent Skills
   - AI Agents
