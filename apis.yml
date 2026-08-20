@@ -69,6 +69,11 @@ apis:
     baseURL: https://modelcontextprotocol.io
     tags:
       - MCP
+      - Standards
+      - Tool Use
+      - Open-Source
+    tags_raw:
+      - MCP
       - Model Context Protocol
       - Standards
       - Tool Use
