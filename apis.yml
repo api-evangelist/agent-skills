@@ -35,6 +35,13 @@ tags:
   - Tool Use
   - Function Calling
   - MCP
+  - Automation
+tags_raw:
+  - Agent Skills
+  - AI Agents
+  - Tool Use
+  - Function Calling
+  - MCP
   - Agentic AI
   - Automation
 apis:
@@ -83,13 +90,14 @@ apis:
       - MCP
       - Standards
       - Tool Use
-      - Open-Source
+      - Open Source
     tags_raw:
       - MCP
       - Model Context Protocol
       - Standards
       - Tool Use
       - Open Source
+      - Open-Source
     properties:
       - type: Documentation
         url: https://modelcontextprotocol.io/introduction
