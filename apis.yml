@@ -27,7 +27,7 @@ name: Agent Skills
 description: A collection of resources, APIs, and standards related to AI agent skills and capabilities. Agent skills represent the tools, functions, and capabilities that AI agents can invoke to accomplish tasks — spanning web search, code execution, file management, memory, and external API integrations. This topic covers the major platforms and frameworks that define how agent skills are declared, discovered, and invoked.
 url: https://github.com/api-evangelist/agent-skills
 created: '2025-01-01'
-modified: '2026-04-19'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 tags:
   - Agent Skills
@@ -107,6 +107,8 @@ apis:
         url: https://github.com/modelcontextprotocol/specification
 
 common:
+  - url: https://claude.com/resources/articles
+    type: Blog
   - type: IssueTracker
     url: https://github.com/google/adk-python/issues
   - type: Releases
