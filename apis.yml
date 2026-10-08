@@ -107,6 +107,12 @@ apis:
         url: https://github.com/modelcontextprotocol/specification
 
 common:
+  - type: Plans
+    url: plans/agent-skills-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/agent-skills-rate-limits.yml
+  - type: FinOps
+    url: finops/agent-skills-finops.yml
   - url: https://claude.com/resources/articles
     type: Blog
   - type: IssueTracker
