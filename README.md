@@ -1,4 +1,4 @@
-# Agent Skills (agent-skills)
+# Agent Skills
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,138 +66,112 @@
 
 A collection of resources, APIs, and standards related to AI agent skills and capabilities. Agent skills represent the tools, functions, and capabilities that AI agents can invoke to accomplish tasks — spanning web search, code execution, file management, memory, and external API integrations. This topic covers the major platforms and frameworks that define how agent skills are declared, discovered, and invoked.
 
-**URL:** [https://github.com/api-evangelist/agent-skills](https://github.com/api-evangelist/agent-skills)
+**Areas:** Agent Skills · AI Agents · Tool Use · Function Calling · MCP · Automation
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Agent Skills on APIs.io
 
-## Tags:
+Everything profiled for Agent Skills is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/agent-skills/](https://apis.io/providers/agent-skills/)** — or go straight to one of the APIs or properties below.
 
- - Agent Skills, AI Agents, Tool Use, Function Calling, MCP, Agentic AI, Automation
+### APIs (3)
 
-## Timestamps
+- [Anthropic Tool Use API](https://apis.io/apis/agent-skills/anthropic-tool-use-api/) — The Anthropic Tool Use API allows AI agents built on Claude to call client-defined functions or Anthropic-provided server tools such as web search, code…
+- [Google Agent Development Kit (ADK)](https://apis.io/apis/agent-skills/google-agent-development-kit-adk/) — Google's Agent Development Kit (ADK) is a flexible framework for building AI agents and multi-agent systems. It supports LLM agents, workflow agents, and…
+- [Model Context Protocol (MCP)](https://apis.io/apis/agent-skills/model-context-protocol-mcp/) — The Model Context Protocol (MCP) is an open-source standard for connecting AI applications to external systems. MCP defines a standardized way for AI agents…
 
-- **Created:** 2025-01-01
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Anthropic Tool Use API
-The Anthropic Tool Use API allows AI agents built on Claude to call client-defined functions or Anthropic-provided server tools such as web search, code execution, and web fetch. Tools are declared in the API request and Claude decides when to invoke them based on context. Server tools run on Anthropic infrastructure while client tools execute in the calling application.
+#### JSON Schema (4)
 
-**Human URL:** [https://platform.claude.com/docs/en/docs/agents-and-tools/tool-use/overview](https://platform.claude.com/docs/en/docs/agents-and-tools/tool-use/overview)
+The data models the API reads and writes.
 
-#### Tags:
+- [MCPServer](https://apis.io/schemas/agent-skills/agent-skills-mcp-server/)
+- [Tool](https://apis.io/schemas/agent-skills/agent-skills-tool/)
+- [ToolCall](https://apis.io/schemas/agent-skills/agent-skills-tool-call/)
+- [ToolResult](https://apis.io/schemas/agent-skills/agent-skills-tool-result/)
 
- - Anthropic, Tool Use, Function Calling, Claude, AI Agents
+#### JSON Structure (4)
 
-#### Properties
+Data models expressed in JSON Structure.
 
-- [Documentation](https://platform.claude.com/docs/en/docs/agents-and-tools/tool-use/overview)
-- [APIReference](https://platform.claude.com/docs/en/docs/agents-and-tools/tool-use/tool-reference)
-- [GettingStarted](https://platform.claude.com/docs/en/docs/agents-and-tools/tool-use/build-a-tool-using-agent)
+- [Agent Skills Mcp Server Structure](https://apis.io/json-structure/agent-skills/agent-skills-mcp-server-structure/)
+- [Agent Skills Tool Call Structure](https://apis.io/json-structure/agent-skills/agent-skills-tool-call-structure/)
+- [Agent Skills Tool Result Structure](https://apis.io/json-structure/agent-skills/agent-skills-tool-result-structure/)
+- [Agent Skills Tool Structure](https://apis.io/json-structure/agent-skills/agent-skills-tool-structure/)
 
-### Google Agent Development Kit (ADK)
-Google's Agent Development Kit (ADK) is a flexible framework for building AI agents and multi-agent systems. It supports LLM agents, workflow agents, and custom agents with capabilities including MCP tool integration, OpenAPI tools, function tools, grounding via Google Search, streaming via Gemini Live API, and Agent-to-Agent (A2A) protocol for inter-agent communication. Available in Python, TypeScript, Go, and Java.
+#### JSON-LD (1)
 
-**Human URL:** [https://adk.dev/](https://adk.dev/)
+Linked-data contexts for the provider's vocabulary.
 
-#### Tags:
+- [Agent Skills Context](https://apis.io/jsonld/agent-skills/agent-skills-context/)
 
- - Google, Agent Development Kit, ADK, Multi-Agent, Gemini, Tool Use
+#### Vocabulary (1)
 
-#### Properties
+The provider's domain terms, defined.
 
-- [Documentation](https://adk.dev/)
-- [GettingStarted](https://adk.dev/get-started)
-- [GitHubRepository](https://github.com/google/adk-python)
+- [Agent Skills Vocabulary](https://apis.io/vocabularies/agent-skills/agent-skills-vocabulary/)
 
-### Model Context Protocol (MCP)
-The Model Context Protocol (MCP) is an open-source standard for connecting AI applications to external systems. MCP defines a standardized way for AI agents to access data sources, tools, and workflows. It enables agents to call external tools, access files, databases, and APIs through a consistent protocol supported by Claude, ChatGPT, VS Code, Cursor, and many other AI clients.
+#### Examples (4)
 
-**Human URL:** [https://modelcontextprotocol.io/introduction](https://modelcontextprotocol.io/introduction)
+Example requests and responses.
 
-#### Tags:
+- [Agent Skills Mcp Server Example](https://apis.io/examples/agent-skills/agent-skills-mcp-server-example/)
+- [Agent Skills Tool Call Example](https://apis.io/examples/agent-skills/agent-skills-tool-call-example/)
+- [Agent Skills Tool Example](https://apis.io/examples/agent-skills/agent-skills-tool-example/)
+- [Agent Skills Tool Result Example](https://apis.io/examples/agent-skills/agent-skills-tool-result-example/)
 
- - MCP, Model Context Protocol, Standards, Tool Use, Open Source
+#### Governance rules (1)
 
-#### Properties
+Spectral rulesets for the provider's contracts.
 
-- [Documentation](https://modelcontextprotocol.io/introduction)
-- [GettingStarted](https://modelcontextprotocol.io/docs/develop/build-server)
-- [GitHubRepository](https://github.com/modelcontextprotocol/specification)
+- [Agent Skills — jsonschema rules](https://apis.io/rules/agent-skills/agent-skills-jsonschema-spectral-rules/)
 
-## Common Properties
+#### Security (1)
 
-- [GitHubOrganization](https://github.com/api-evangelist)
-- [JSONSchema - Tool Schema](https://raw.githubusercontent.com/api-evangelist/agent-skills/refs/heads/main/json-schema/agent-skills-tool-schema.json)
-- [JSONSchema - Tool Call Schema](https://raw.githubusercontent.com/api-evangelist/agent-skills/refs/heads/main/json-schema/agent-skills-tool-call-schema.json)
-- [JSONSchema - Tool Result Schema](https://raw.githubusercontent.com/api-evangelist/agent-skills/refs/heads/main/json-schema/agent-skills-tool-result-schema.json)
-- [JSONSchema - MCP Server Schema](https://raw.githubusercontent.com/api-evangelist/agent-skills/refs/heads/main/json-schema/agent-skills-mcp-server-schema.json)
-- [JSON-LD](https://raw.githubusercontent.com/api-evangelist/agent-skills/refs/heads/main/json-ld/agent-skills-context.jsonld)
-- [Vocabulary](https://raw.githubusercontent.com/api-evangelist/agent-skills/refs/heads/main/vocabulary/agent-skills-vocabulary.yaml)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Features
+- [Agent Skills Domain Security](https://apis.io/security/agent-skills/agent-skills-domain-security/)
 
-| Name | Description |
-|------|-------------|
-| Function Calling | AI agents can invoke user-defined or platform-provided functions based on natural language instructions, with structured input/output schemas. |
-| Server-Side Tool Execution | Platforms like Anthropic and OpenAI run certain agent skills (web search, code execution) on their own infrastructure, removing the need for client-side execution. |
-| MCP Integration | The Model Context Protocol provides a universal adapter layer enabling agents to discover and call any MCP-compatible server as a skill. |
-| Multi-Agent Orchestration | Frameworks like Google ADK support coordinating multiple specialized agents, with skills delegated across agent boundaries via protocols like A2A. |
-| Strict Schema Enforcement | Agent skill definitions can enforce strict JSON Schema compliance to ensure agents produce well-formed tool calls matching the declared parameter schema. |
-| Tool Discovery | Anthropic's tool_search server tool enables agents to discover available tools at runtime without statically declaring all tool schemas upfront. |
+#### Plans and pricing (1)
 
-## Use Cases
+Published plans, tiers and prices.
 
-| Name | Description |
-|------|-------------|
-| Automated Research | Agents use web search and fetch skills to retrieve, synthesize, and summarize information from the internet in response to user queries. |
-| Code Generation and Execution | Agents invoke code execution skills to write, run, and debug code within sandboxed environments, returning results to the user. |
-| Data Integration | Agents use OpenAPI-backed skills to read and write data across enterprise systems — CRMs, ERPs, databases — through standardized API calls. |
-| File and Document Management | Agents invoke file system skills to read, write, and organize documents, images, and structured data on behalf of users. |
-| Multi-Step Workflow Automation | Agents chain multiple skills in sequence — searching, retrieving, transforming, and storing data — to complete complex multi-step tasks autonomously. |
-| AI-Assisted Customer Support | Customer service agents use CRM lookup, ticketing, and knowledge base skills to resolve customer issues without human escalation. |
+- [Agent Skills Plans Pricing](https://apis.io/plans/agent-skills/agent-skills-plans-pricing/)
 
-## Integrations
+#### Rate limits (1)
 
-| Name | Description |
-|------|-------------|
-| Claude (Anthropic) | Native support for tool use and MCP via the Anthropic Messages API. |
-| ChatGPT (OpenAI) | Function calling and MCP tool integration via the OpenAI Responses API. |
-| Gemini (Google) | Tool use and ADK integration for Gemini-based agents. |
-| VS Code Copilot | GitHub Copilot supports MCP servers as agent skill providers within the VS Code development environment. |
-| Cursor | Cursor IDE supports MCP tool integration for AI-assisted coding agents. |
-| LangChain | Open-source framework for composing agent skills into chains and graphs across multiple LLM providers. |
-| LlamaIndex | Data framework enabling agents to index and retrieve from external data sources as structured skills. |
+Published request limits.
 
-## Artifacts
+- [Agent Skills Rate Limits](https://apis.io/rate-limits/agent-skills/agent-skills-rate-limits/)
 
-Machine-readable API specifications organized by format.
+#### FinOps (1)
 
-### JSON Schema
+What the API costs to run, by operation.
 
-- [Tool Schema](json-schema/agent-skills-tool-schema.json)
-- [Tool Call Schema](json-schema/agent-skills-tool-call-schema.json)
-- [Tool Result Schema](json-schema/agent-skills-tool-result-schema.json)
-- [MCP Server Schema](json-schema/agent-skills-mcp-server-schema.json)
+- [Agent Skills Finops](https://apis.io/finops/agent-skills/agent-skills-finops/)
 
-### JSON Structure
+## Where to find this API
 
-- [Tool Structure](json-structure/agent-skills-tool-structure.json)
-- [Tool Call Structure](json-structure/agent-skills-tool-call-structure.json)
-- [Tool Result Structure](json-structure/agent-skills-tool-result-structure.json)
-- [MCP Server Structure](json-structure/agent-skills-mcp-server-structure.json)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### JSON-LD
+- [Blog](https://claude.com/resources/articles)
+- [GitHub](https://github.com/api-evangelist)
 
-- [Agent Skills Context](json-ld/agent-skills-context.jsonld)
+## API Evangelist rating
 
-## Vocabulary
+**Unrated** — no public website could be reached for this company, so there was almost nothing to measure and nothing a reader could check.
 
-- [Agent Skills Vocabulary](vocabulary/agent-skills-vocabulary.yaml) — Unified taxonomy mapping 5 resources, 6 actions, 3 workflows, and 3 personas across operational and capability dimensions
+This is not a score of zero. No rating is published for this company. If that is wrong because something public exists that we missed, say so on this repository or email [info@apievangelist.com](mailto:info@apievangelist.com) and it will be re-run — free, and no justification needed.
 
-## Maintainers
+## How this profile is made
 
-**FN:** Kin Lane
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-**Email:** info@apievangelist.com
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Agent Skills: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/agent-skills/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
